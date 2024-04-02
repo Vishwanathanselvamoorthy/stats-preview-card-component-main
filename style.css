@@ -8,36 +8,38 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 50px 0px;
+  padding: 100px 30px;
   background-color: hsl(233, 47%, 7%);
 }
+.desktop-img {
+  display: none;
+}
 .main-container {
-  width: 400px;
+  min-width: 400px;
   background-color: hsl(244, 38%, 16%);
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px;
 }
 .main-container .img-container {
   position: relative;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
+  height: 100%;
 }
 
 .main-container .img-container img {
   width: 100%;
-  border-radius: 20px 20px 0px 0px;
-  /* position: relative; */
+  border-radius: 10px 10px 0px 0px;
 }
 .main-container .img-container .voilet-container {
-  background-color: hsla(277, 64%, 61%, 0.5);
+  background-color: hsla(277, 64%, 61%, 0.6);
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  bottom: 0;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 }
 .main-container .text-container {
   text-align: center;
-  padding: 40px;
+  padding: 10px;
 }
 .main-container .text-container h1 {
   margin: 30px 0px;
@@ -54,13 +56,13 @@ body {
   font-weight: 400;
   margin: 25px 0px;
   font-size: 18px;
-  /* width: 100%; */
 }
 .main-container .text-container .info-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
+  margin: 30px 0px;
 }
 .main-container .text-container .info-container .flex-contain {
   display: flex;
@@ -71,10 +73,52 @@ body {
   color: hsl(0, 0%, 100%);
   font-family: Inter;
 }
-
 .main-container .text-container .info-container .flex-contain span {
   color: hsla(0, 0%, 100%, 0.6);
   font-size: 15px;
   font-family: Lexend Deca;
   font-weight: 400;
+}
+@media screen and (min-width: 1024px) {
+  .desktop-img {
+    display: block;
+  }
+  .mobile-img {
+    display: none;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1300px;
+    max-height: 500px;
+  }
+  .main-container .img-container {
+    width: 50%;
+    height: 100%;
+  }
+  .main-container .img-container img {
+    height: 500px;
+  }
+  .main-container .text-container {
+    position: relative;
+    width: 50%;
+    text-align: left;
+    padding: 0px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-container .text-container h1 {
+    margin: 0;
+  }
+  .main-container .text-container .info-container {
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    gap: 100px;
+  }
 }
